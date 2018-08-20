@@ -3,11 +3,11 @@
 #This is the string that we will to sort
 String = [8,5,6,3,9,2,5,9,4,1,3,2,33,55,2,100,3,4,98]
 print(String)
-flag=False #inizialace flag with value true
+flag=True #inizialace flag with value true
 count=0;
 i=0;
-while flag!=True: #While that someone exchanges exist
-    count=0#inizialace count in 0  to validate a new roand
+while flag==True: #While that someone exchanges exist
+    flag=False #inizialace in false to validate if in the next round exist a exchange
     i=0
     #
     for i in range(len(String)):
@@ -20,12 +20,7 @@ while flag!=True: #While that someone exchanges exist
                 #exchanges the position i+1 with the value of the position i
                 String[i+1]=aux
                 #increase the value of count to see how many exchanges were made
-                count+=1;
-    #if count is equals to 0 is because there were no exchanges
-    if(count==0):
-        #THis is the condition to stop to do exchanges
-        flag=True
-    else:
-        flag=False
+                flag=True#has a exchange
+
 
 print(String)#The string now ordered
